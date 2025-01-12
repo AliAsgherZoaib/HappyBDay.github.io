@@ -1,0 +1,91 @@
+/* General body styling */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('bg5.webp'); /* Replace with your background image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Confetti container styling */
+.poppers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Popup styling */
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+}
+
+.popup img {
+    display: none;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.popup img:first-child {
+    width: 220px;
+    height: auto;
+}
+
+.popup img:last-child {
+    width: 400px;
+    height: auto;
+}
+
+/* Typewriter text container */
+.typewriter-container {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: calc(50% - 200px); /* Adjust relative to the page image */
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-family: 'Comic Sans MS';
+    font-size: 13px;
+    color: #000000;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #333;
+    z-index: 20; /* Ensure it appears above other elements */
+    animation: typing 4s steps(30, end), blink 0.5s step-end infinite;
+}
+
+/* Typewriter animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
